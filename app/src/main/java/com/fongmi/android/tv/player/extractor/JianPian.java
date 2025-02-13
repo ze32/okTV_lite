@@ -13,6 +13,7 @@ public class JianPian implements Source.Extractor {
 
     private P2PClass p2p;
     private String path;
+    public static int p2pPort;
 
     @Override
     public boolean match(String scheme, String host) {
@@ -28,6 +29,7 @@ public class JianPian implements Source.Extractor {
         init();
         stop();
         start(url);
+        p2pPort = p2p.port;
         return "http://127.0.0.1:" + p2p.port + "/" + URLEncoder.encode(Uri.parse(path).getLastPathSegment(), "GBK");
     }
 
