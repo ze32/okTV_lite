@@ -1,0 +1,26 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    namespace 'com.fongmi.quickjs'
+
+    compileSdk 35
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 28
+    }
+
+    lint {
+        disable 'UnsafeOptInUsageError'
+    }
+}
+
+dependencies {
+    implementation project(':catvod')
+    implementation 'org.jsoup:jsoup:' + jsoupVersion
+    implementation 'net.sourceforge.streamsupport:android-retrofuture:1.7.4'
+    implementation(ext: 'jar', name: 'wrapper-java', group: 'fongmi', version: 'release')
+    implementation(ext: 'aar', name: 'wrapper-android-release', group: 'fongmi', version: 'release')
+}
