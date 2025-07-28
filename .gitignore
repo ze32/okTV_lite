@@ -1,0 +1,7 @@
+.idea
+.gradle
+*.jks
+*build
+/media*
+/Release
+/local.properties
