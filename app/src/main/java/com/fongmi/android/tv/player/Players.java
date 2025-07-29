@@ -126,7 +126,7 @@ public class Players implements Player.Listener, IMediaPlayer.Listener, ParseCal
     }
 
     private Players(Activity activity) {
-        player = Setting.getPlayer();
+        player = EXO;
         decode = Setting.getDecode(player);
         builder = new StringBuilder();
         runnable = ErrorEvent::timeout;
@@ -213,8 +213,8 @@ public class Players implements Player.Listener, IMediaPlayer.Listener, ParseCal
     public void setPlayer(int player) {
         if (this.player != player) reset();
         if (this.player != player) stop();
-        this.player = player;
-        this.decode = getDecode(player);
+        this.player = EXO;
+        this.decode = getDecode(EXO);
     }
 
     public int getDecode(int player) {
