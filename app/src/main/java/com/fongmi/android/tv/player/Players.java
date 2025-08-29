@@ -104,7 +104,7 @@ public class Players implements Player.Listener, IMediaPlayer.Listener, Analytic
     }
 
     public Players init(Activity activity) {
-        player = Setting.getPlayer();
+        player = EXO;
         decode = Setting.getDecode();
         builder = new StringBuilder();
         runnable = ErrorEvent::timeout;
@@ -188,7 +188,7 @@ public class Players implements Player.Listener, IMediaPlayer.Listener, Analytic
 
     public void setPlayer(int player) {
         if (this.player != player) stop();
-        this.player = player;
+        this.player = EXO;
     }
 
     public int getDecode() {
