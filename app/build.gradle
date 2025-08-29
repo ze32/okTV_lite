@@ -22,14 +22,16 @@ android {
     productFlavors {
         leanback {
             dimension "mode"
+            applicationId "app.fongmi.tv225"
         }
-        mobile {
+        /* mobile {
             dimension "mode"
-        }
+            applicationId "app.fongmi.tv225.m"
+        } */
         java {
             dimension "api"
         }
-        python {
+        /* python {
             dimension "api"
         }
         x86 {
@@ -39,7 +41,7 @@ android {
         arm64_v8a {
             dimension "abi"
             ndk { abiFilters "arm64-v8a" }
-        }
+        } */
         armeabi_v7a {
             dimension "abi"
             ndk { abiFilters "armeabi-v7a" }
@@ -137,10 +139,10 @@ dependencies {
     leanbackImplementation(ext: 'aar', name: 'dlna-dmr', group: 'fongmi', version: 'release')
     leanbackImplementation 'androidx.leanback:leanback:1.2.0-alpha04'
     leanbackImplementation 'com.github.JessYanCoding:AndroidAutoSize:1.2.1'
-    mobileImplementation(ext: 'aar', name: 'dlna-dmc', group: 'fongmi', version: 'release')
-    mobileImplementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-    mobileImplementation 'com.google.android.flexbox:flexbox:3.0.0'
-    mobileImplementation('com.journeyapps:zxing-android-embedded:4.3.0') { transitive = false }
+//     mobileImplementation(ext: 'aar', name: 'dlna-dmc', group: 'fongmi', version: 'release')
+//     mobileImplementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+//     mobileImplementation 'com.google.android.flexbox:flexbox:3.0.0'
+//     mobileImplementation('com.journeyapps:zxing-android-embedded:4.3.0') { transitive = false }
     annotationProcessor 'androidx.room:room-compiler:2.6.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
 }
