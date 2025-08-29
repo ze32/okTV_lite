@@ -1,5 +1,6 @@
 package com.github.catvod.utils;
 
+import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
 
@@ -32,6 +33,10 @@ public class Path {
         return Environment.getExternalStorageDirectory();
     }
 
+    public static File download() {
+        return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+    }
+
     public static File cache() {
         return Init.context().getCacheDir();
     }
@@ -50,6 +55,11 @@ public class Path {
 
     public static File so() {
         return check(new File(files() + File.separator + "so"));
+    }
+
+    public static File so(String name) {
+        if (name.startsWith("http")) return new File(so(), Uri.parse(name).getLastPathSegment());
+        return new File(so(), "lib".concat(name).concat(".so"));
     }
 
     public static File js() {
